@@ -14,8 +14,7 @@ st.markdown("<br></br>",unsafe_allow_html=True)
 df=pd.read_csv('mail_data.csv')
 
 proc_data=df.fillna('')
-proc_data.loc[proc_data['Category'] =='spam','Category',]=0
-proc_data.loc[proc_data['Category'] =='ham','Category',]=1
+proc_data['Category']=proc_data['Category'].map({'spam':0,'ham':1})
 X=proc_data['Message']
 Y=proc_data['Category']
 X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=3)
