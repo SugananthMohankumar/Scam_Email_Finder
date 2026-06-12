@@ -57,6 +57,9 @@ if (st.button(" Check Email ")):
 
     input_data_features=feature_extraction.transform([input_data])
     predict=model.predict(input_data_features)
+        st.markdown(
+    f"<h4 style='color:purple;'>Accuracy Score: {accuracy:.2f}%</h4>",
+    unsafe_allow_html=True)
 
 
     if (predict[0]==0):
