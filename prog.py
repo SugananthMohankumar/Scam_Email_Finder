@@ -32,6 +32,7 @@ Y_test=Y_test.astype('int')
 model=LogisticRegression()
 model.fit(X_train_features,Y_train)
 predict=model.predict(X_test_features)
+accuracy=accuracy_score(Y_test,predict)*100
 
 st.markdown("<h4 style='color:white; font-weight: bold;'>ENTER EMAIL</h4>",unsafe_allow_html=True)
 input_data = st.text_area(label='',
